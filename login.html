@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Recorder and Translator</title>
+    <link href="css/bootstarp.min.css" rel="stylesheet">
+    <style>
+        *{
+            font-family: "Roboto", sans-serif;
+        }
+
+        body {
+            background-color: #f5f0e1;
+            color: #333;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 1.5rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .login-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .login-header h2{
+            font-size: 2em;
+            color: #4e3b31;
+            margin: auto;
+        }
+
+        form div{
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            color: #4e3b31;
+            font-size: 20px;
+        }
+
+        a{
+            color: #4e3b31;      
+        }
+
+        input{
+            margin: 5px;
+            padding: 5px;
+        }
+
+        button{
+            width: 25%;
+            margin: auto;
+            background-color: #4e3b31;
+            padding: 3px;
+            border-radius: 10px;
+        }
+
+        button a{
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        .text-center{
+            display: flex;
+            align-items: center;
+            font-size: 0.75em;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container" style="padding-top: 70px;">
+        <div class="login-container">
+            <div class="login-header text-center">
+                <h2>Login</h2>
+            </div>
+            <form>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary w-100"><a href="recorder.html">Login</a></button>
+                </div>
+                <div class="text-center">
+                    <p>Don't have an account?</p>
+                    <a href="register.html">Register Here</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voice Recorder</title>
+    <link href="css/bootstarp.min.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        background-color: #f5f0e1;
+        color: #4e3b31;
+      }
+
+      .main {
+        max-width: 400px;
+        margin: auto;
+        padding: 1.5rem;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .container {
+        text-align: center;
+        background-color: #fff;
+        padding: 20px;
+        padding-top: 70px !important;
+
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 600px;
+      }
+      .controls button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      textarea {
+        width: 100%;
+        height: 100px;
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+        resize: none;
+      }
+
+      h3 {
+        text-align: center;
+      }
+
+      div div {
+        border-radius: 5px;
+        padding: 20px;
+        text-align: center;
+        margin: auto;
+      }
+
+      #videoPlayer{
+        display: flex;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Real-Time Voice Recorder and Translator</h3>
+    <div>
+      <div class="main">
+        <button id="start">Start Recording</button>
+        <button id="stop">Stop Recording</button>
+        <div id="status">Status: Waiting to start...</div>
+        <p id="transcription">Transcription: <span id="transcript"></span></p>
+      </div>
+    </div>
+    <br />
+    <div id="sign"></div>
+
+    <script>
+      const SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        alert(
+          "Your browser does not support speech recognition. Please use Google Chrome or an updated browser."
+        );
+      } else {
+        const recognition = new SpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        recognition.lang = "en-US";
+
+        const startButton = document.getElementById("start");
+        const stopButton = document.getElementById("stop");
+        const status = document.getElementById("status");
+        const transcriptElement = document.getElementById("transcript");
+        let signLanguage = document.getElementById("sign");
+        let words = [];
+        let currentIndex = 0;
+
+        let isRecording = false;
+
+        startButton.addEventListener("click", () => {
+          if (!isRecording) {
+            recognition.start();
+            isRecording = true;
+            status.textContent = "Recording...";
+            startButton.disabled = true;
+            stopButton.disabled = false;
+          }
+        });
+
+        stopButton.addEventListener("click", () => {
+          if (isRecording) {
+            recognition.stop();
+            isRecording = false;
+            status.textContent = "Stopped.";
+            startButton.disabled = false;
+            stopButton.disabled = true;
+            words = transcriptElement.innerHTML.split(" ");
+            currentIndex = 0;
+
+            if (words.length > 0) {
+              playVideoForWord(words[currentIndex]);
+            }
+          }
+        });
+
+        function playVideoForWord(word) {
+          word = word.trim().toLowerCase();
+          let videoSrc = "";
+
+          if (word === "after") {
+            videoSrc = "./assets/after.mp4";
+          } else if (word === "again") {
+            videoSrc = "./assets/again.mp4";
+          } else if (word === "against") {
+            videoSrc = "./assets/against.mp4";
+          } else if (word === "age") {
+            videoSrc = "./assets/age.mp4";
+          } else if (word === "all") {
+            videoSrc = "./assets/all.mp4";
+          } else if (word === "alone") {
+            videoSrc = "./assets/alone.mp4";
+          } else if (word === "also") {
+            videoSrc = "./assets/also.mp4";
+          } else if (word === "and") {
+            videoSrc = "./assets/and.mp4";
+          } else if (word === "ask") {
+            videoSrc = "./assets/ask.mp4";
+          } else if (word === "at") {
+            videoSrc = "./assets/at.mp4";
+          } else if (word === "be") {
+            videoSrc = "./assets/be.mp4";
+          } else if (word === "beautiful") {
+            videoSrc = "./assets/beautiful.mp4";
+          } else if (word === "before") {
+            videoSrc = "./assets/before.mp4";
+          } else if (word === "best") {
+            videoSrc = "./assets/best.mp4";
+          } else if (word === "better") {
+            videoSrc = "./assets/better.mp4";
+          } else if (word === "busy") {
+            videoSrc = "./assets/busy.mp4";
+          } else if (word === "but") {
+            videoSrc = "./assets/but.mp4";
+          } else if (word === "bye") {
+            videoSrc = "./assets/bye.mp4";
+          } else if (word === "can") {
+            videoSrc = "./assets/can.mp4";
+          } else if (word === "cannot") {
+            videoSrc = "./assets/cannot.mp4";
+          } else if (word === "change") {
+            videoSrc = "./assets/change.mp4";
+          } else if (word === "college") {
+            videoSrc = "./assets/college.mp4";
+          } else if (word === "come") {
+            videoSrc = "./assets/come.mp4";
+          } else if (word === "computer") {
+            videoSrc = "./assets/computer.mp4";
+          } else if (word === "day") {
+            videoSrc = "./assets/day.mp4";
+          } else if (word === "distance") {
+            videoSrc = "./assets/distance.mp4";
+          } else if (word === "do not") {
+            videoSrc = "./assets/donot.mp4";
+          } else if (word === "do") {
+            videoSrc = "./assets/do.mp4";
+          } else if (word === "does not") {
+            videoSrc = "./assets/doesnot.mp4";
+          } else if (word === "eat") {
+            videoSrc = "./assets/eat.mp4";
+          } else if (word === "engineer") {
+            videoSrc = "./assets/engineer.mp4";
+          } else if (word === "fight") {
+            videoSrc = "./assets/fight.mp4";
+          } else if (word === "finish") {
+            videoSrc = "./assets/finish.mp4";
+          } else if (word === "from") {
+            videoSrc = "./assets/from.mp4";
+          } else if (word === "glitter") {
+            videoSrc = "./assets/glitter.mp4";
+          } else if (word === "go") {
+            videoSrc = "./assets/go.mp4";
+          } else if (word === "god") {
+            videoSrc = "./assets/god.mp4";
+          } else if (word === "gold") {
+            videoSrc = "./assets/gold.mp4";
+          } else if (word === "good") {
+            videoSrc = "./assets/good.mp4";
+          } else if (word === "great") {
+            videoSrc = "./assets/great.mp4";
+          } else if (word === "hand") {
+            videoSrc = "./assets/hand.mp4";
+          } else if (word === "hands") {
+            videoSrc = "./assets/hands.mp4";
+          } else if (word === "happy") {
+            videoSrc = "./assets/happy.mp4";
+          } else if (word === "hello") {
+            videoSrc = "./assets/hello.mp4";
+          } else if (word === "help") {
+            videoSrc = "./assets/help.mp4";
+          } else if (word === "her") {
+            videoSrc = "./assets/her.mp4";
+          } else if (word === "here") {
+            videoSrc = "./assets/here.mp4";
+          } else if (word === "his") {
+            videoSrc = "./assets/his.mp4";
+          } else if (word === "home") {
+            videoSrc = "./assets/home.mp4";
+          } else if (word === "homepage") {
+            videoSrc = "./assets/homepage.mp4";
+          } else if (word === "how") {
+            videoSrc = "./assets/how.mp4";
+          } else if (word === "i") {
+            videoSrc = "./assets/i.mp4";
+          } else if (word === "invent") {
+            videoSrc = "./assets/invent.mp4";
+          } else if (word === "it") {
+            videoSrc = "./assets/it.mp4";
+          } else if (word === "keep") {
+            videoSrc = "./assets/keep.mp4";
+          } else if (word === "language") {
+            videoSrc = "./assets/language.mp4";
+          } else if (word === "laugh") {
+            videoSrc = "./assets/laugh.mp4";
+          } else if (word === "learn") {
+            videoSrc = "./assets/learn.mp4";
+          } else if (word === "me") {
+            videoSrc = "./assets/me.mp4";
+          } else if (word === "more") {
+            videoSrc = "./assets/more.mp4";
+          } else if (word === "my") {
+            videoSrc = "./assets/my.mp4";
+          } else if (word === "name") {
+            videoSrc = "./assets/name.mp4";
+          } else if (word === "next") {
+            videoSrc = "./assets/next.mp4";
+          } else if (word === "not") {
+            videoSrc = "./assets/not.mp4";
+          } else if (word === "now") {
+            videoSrc = "./assets/now.mp4";
+          } else if (word === "of") {
+            videoSrc = "./assets/of.mp4";
+          } else if (word === "on") {
+            videoSrc = "./assets/on.mp4";
+          } else if (word === "our") {
+            videoSrc = "./assets/our.mp4";
+          } else if (word === "out") {
+            videoSrc = "./assets/out.mp4";
+          } else if (word === "pretty") {
+            videoSrc = "./assets/pretty.mp4";
+          } else if (word === "right") {
+            videoSrc = "./assets/right.mp4";
+          } else if (word === "sad") {
+            videoSrc = "./assets/sad.mp4";
+          } else if (word === "safe") {
+            videoSrc = "./assets/safe.mp4";
+          } else if (word === "see") {
+            videoSrc = "./assets/see.mp4";
+          } else if (word === "self") {
+            videoSrc = "./assets/self.mp4";
+          } else if (word === "sign") {
+            videoSrc = "./assets/sign.mp4";
+          } else if (word === "sing") {
+            videoSrc = "./assets/sing.mp4";
+          } else if (word === "so") {
+            videoSrc = "./assets/so.mp4";
+          } else if (word === "sound") {
+            videoSrc = "./assets/sound.mp4";
+          } else if (word === "stay") {
+            videoSrc = "./assets/stay.mp4";
+          } else if (word === "study") {
+            videoSrc = "./assets/study.mp4";
+          } else if (word === "talk") {
+            videoSrc = "./assets/talk.mp4";
+          } else if (word === "television") {
+            videoSrc = "./assets/television.mp4";
+          } else if (word === "thank you") {
+            videoSrc = "./assets/thankyou.mp4";
+          } else if (word === "thank") {
+            videoSrc = "./assets/thank.mp4";
+          } else if (word === "that") {
+            videoSrc = "./assets/that.mp4";
+          } else if (word === "they") {
+            videoSrc = "./assets/they.mp4";
+          } else if (word === "this") {
+            videoSrc = "./assets/this.mp4";
+          } else if (word === "those") {
+            videoSrc = "./assets/those.mp4";
+          } else if (word === "time") {
+            videoSrc = "./assets/time.mp4";
+          } else if (word === "to") {
+            videoSrc = "./assets/to.mp4";
+          } else if (word === "type") {
+            videoSrc = "./assets/type.mp4";
+          } else if (word === "us") {
+            videoSrc = "./assets/us.mp4";
+          } else if (word === "walk") {
+            videoSrc = "./assets/walk.mp4";
+          } else if (word === "wash") {
+            videoSrc = "./assets/wash.mp4";
+          } else if (word === "way") {
+            videoSrc = "./assets/way.mp4";
+          } else if (word === "we") {
+            videoSrc = "./assets/we.mp4";
+          } else if (word === "welcome") {
+            videoSrc = "./assets/welcome.mp4";
+          } else if (word === "what") {
+            videoSrc = "./assets/what.mp4";
+          } else if (word === "when") {
+            videoSrc = "./assets/when.mp4";
+          } else if (word === "where") {
+            videoSrc = "./assets/where.mp4";
+          } else if (word === "which") {
+            videoSrc = "./assets/which.mp4";
+          } else if (word === "who") {
+            videoSrc = "./assets/who.mp4";
+          } else if (word === "whole") {
+            videoSrc = "./assets/whole.mp4";
+          } else if (word === "whose") {
+            videoSrc = "./assets/whose.mp4";
+          } else if (word === "why") {
+            videoSrc = "./assets/why.mp4";
+          } else if (word === "will") {
+            videoSrc = "./assets/will.mp4";
+          } else if (word === "with") {
+            videoSrc = "./assets/with.mp4";
+          } else if (word === "without") {
+            videoSrc = "./assets/without.mp4";
+          } else if (word === "words") {
+            videoSrc = "./assets/words.mp4";
+          } else if (word === "work") {
+            videoSrc = "./assets/work.mp4";
+          } else if (word === "world") {
+            videoSrc = "./assets/world.mp4";
+          } else if (word === "wrong") {
+            videoSrc = "./assets/wrong.mp4";
+          } else if (word === "you") {
+            videoSrc = "./assets/you.mp4";
+          } else if (word === "your") {
+            videoSrc = "./assets/your.mp4";
+          } else if (word === "yourself") {
+            videoSrc = "./assets/yourself.mp4";
+          }
+
+          if (!videoSrc) {
+            playWordByLetters(word);
+          } else {
+            signLanguage.innerHTML = `
+              <video id="videoPlayer" width="640" height="480" controls autoplay>
+                <source src="${videoSrc}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>`;
+
+            const videoPlayer = document.getElementById("videoPlayer");
+
+            videoPlayer.onended = () => {
+              currentIndex++;
+              if (currentIndex < words.length) {
+                playVideoForWord(words[currentIndex]);
+              }
+            };
+          }
+        }
+
+        function playWordByLetters(word) {
+          let currentLetterIndex = 0;
+
+          function playNextLetter() {
+            if (currentLetterIndex < word.length) {
+              let letter = word[currentLetterIndex];
+              let videoSrc = "";
+              if (letter === "a") {
+                videoSrc = "./assets/a.mp4";
+              } else if (letter === "b") {
+                videoSrc = "./assets/b.mp4";
+              } else if (letter === "c") {
+                videoSrc = "./assets/c.mp4";
+              } else if (letter === "d") {
+                videoSrc = "./assets/d.mp4";
+              } else if (letter === "e") {
+                videoSrc = "./assets/e.mp4";
+              } else if (letter === "f") {
+                videoSrc = "./assets/f.mp4";
+              } else if (letter === "g") {
+                videoSrc = "./assets/g.mp4";
+              } else if (letter === "h") {
+                videoSrc = "./assets/h.mp4";
+              } else if (letter === "i") {
+                videoSrc = "./assets/i.mp4";
+              } else if (letter === "j") {
+                videoSrc = "./assets/j.mp4";
+              } else if (letter === "k") {
+                videoSrc = "./assets/k.mp4";
+              } else if (letter === "l") {
+                videoSrc = "./assets/l.mp4";
+              } else if (letter === "m") {
+                videoSrc = "./assets/m.mp4";
+              } else if (letter === "n") {
+                videoSrc = "./assets/n.mp4";
+              } else if (letter === "o") {
+                videoSrc = "./assets/o.mp4";
+              } else if (letter === "p") {
+                videoSrc = "./assets/p.mp4";
+              } else if (letter === "q") {
+                videoSrc = "./assets/q.mp4";
+              } else if (letter === "r") {
+                videoSrc = "./assets/r.mp4";
+              } else if (letter === "s") {
+                videoSrc = "./assets/s.mp4";
+              } else if (letter === "t") {
+                videoSrc = "./assets/t.mp4";
+              } else if (letter === "u") {
+                videoSrc = "./assets/u.mp4";
+              } else if (letter === "v") {
+                videoSrc = "./assets/v.mp4";
+              } else if (letter === "w") {
+                videoSrc = "./assets/w.mp4";
+              } else if (letter === "x") {
+                videoSrc = "./assets/x.mp4";
+              } else if (letter === "y") {
+                videoSrc = "./assets/y.mp4";
+              } else if (letter === "z") {
+                videoSrc = "./assets/z.mp4";
+              }
+
+              if (videoSrc) {
+                signLanguage.innerHTML = `
+                  <video id="videoPlayer" width="640" height="480" controls autoplay>
+                    <source src="${videoSrc}" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>`;
+
+                const videoPlayer = document.getElementById("videoPlayer");
+                videoPlayer.onended = () => {
+                  currentLetterIndex++;
+                  playNextLetter();
+                };
+              }
+            }
+          }
+
+          playNextLetter();
+        }
+
+        recognition.onresult = (event) => {
+          let transcript = "";
+          for (let i = 0; i < event.results.length; i++) {
+            transcript += event.results[i][0].transcript;
+          }
+          transcriptElement.textContent = transcript;
+        };
+
+        recognition.onerror = (event) => {
+          status.textContent = `Error occurred: ${event.error}`;
+          startButton.disabled = false;
+          stopButton.disabled = true;
+          isRecording = false;
+        };
+
+        recognition.onend = () => {
+          status.textContent = "Recognition stopped.";
+          startButton.disabled = false;
+          stopButton.disabled = true;
+          isRecording = false;
+        };
+      }
+    </script>
+  </body>
+</html>
