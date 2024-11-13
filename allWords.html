@@ -4,6 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Audio To Sign Language</title>
+    <script src="https://kit.fontawesome.com/c50d64cd93.js" crossorigin="anonymous"></script>
+    <style>
+      .all_words {
+        padding: 1% 4%;
+      }
+    
+      .all_words button {
+        border: none;
+        text-decoration: underline;
+        font-weight: bold;
+        font-size: 15px;
+        cursor: pointer;
+        margin: 10px;
+      }
+    
+      #videoWindow {
+        display: none;
+        position: fixed;
+        width: 100vh;
+        top: 20%;
+        left: 34%;
+      }
+    
+      #closeButton {
+        position: absolute;
+        display: none;
+        top: 23%;
+        right: 33%;
+      }
+    </style>
   </head>
   <body>
     <div class="navbar">
@@ -13,7 +43,8 @@
       </ul>
     </div>
     <div class="all_words">
-      <h2>A</h2><hr>
+      <h2>A</h2>
+      <hr />
       <button onclick="playSign('after')">after</button>
       <button onclick="playSign('again')">again</button>
       <button onclick="playSign('against')">against</button>
@@ -24,7 +55,8 @@
       <button onclick="playSign('and')">and</button>
       <button onclick="playSign('ask')">ask</button>
       <button onclick="playSign('at')">at</button>
-      <h2>B</h2><hr>
+      <h2>B</h2>
+      <hr />
       <button onclick="playSign('be')">be</button>
       <button onclick="playSign('beautiful')">beautiful</button>
       <button onclick="playSign('before')">before</button>
@@ -33,34 +65,40 @@
       <button onclick="playSign('busy')">busy</button>
       <button onclick="playSign('but')">but</button>
       <button onclick="playSign('bye')">bye</button>
-      <h2>C</h2><hr>
+      <h2>C</h2>
+      <hr />
       <button onclick="playSign('can')">can</button>
       <button onclick="playSign('cannot')">cannot</button>
       <button onclick="playSign('change')">change</button>
       <button onclick="playSign('college')">college</button>
       <button onclick="playSign('come')">come</button>
       <button onclick="playSign('computer')">computer</button>
-      <h2>D</h2><hr>
+      <h2>D</h2>
+      <hr />
       <button onclick="playSign('day')">day</button>
       <button onclick="playSign('distance')">distance</button>
       <button onclick="playSign('donot')">do not</button>
       <button onclick="playSign('do')">do</button>
       <button onclick="playSign('doesnot')">does not</button>
-      <h2>E</h2><hr>
+      <h2>E</h2>
+      <hr />
       <button onclick="playSign('eat')">eat</button>
       <button onclick="playSign('engineer')">engineer</button>
-      <h2>F</h2><hr>
+      <h2>F</h2>
+      <hr />
       <button onclick="playSign('fight')">fight</button>
       <button onclick="playSign('finish')">finish</button>
       <button onclick="playSign('from')">from</button>
-      <h2>G</h2><hr>
+      <h2>G</h2>
+      <hr />
       <button onclick="playSign('glitter')">glitter</button>
       <button onclick="playSign('go')">go</button>
       <button onclick="playSign('god')">god</button>
       <button onclick="playSign('gold')">gold</button>
       <button onclick="playSign('good')">good</button>
       <button onclick="playSign('great')">great</button>
-      <h2>H</h2><hr>
+      <h2>H</h2>
+      <hr />
       <button onclick="playSign('hand')">hand</button>
       <button onclick="playSign('hands')">hands</button>
       <button onclick="playSign('happy')">happy</button>
@@ -72,34 +110,43 @@
       <button onclick="playSign('home')">home</button>
       <button onclick="playSign('homepage')">homepage</button>
       <button onclick="playSign('how')">how</button>
-      <h2>I</h2><hr>
+      <h2>I</h2>
+      <hr />
       <button onclick="playSign('invent')">invent</button>
       <button onclick="playSign('it')">it</button>
-      <h2>K</h2><hr>
+      <h2>K</h2>
+      <hr />
       <button onclick="playSign('keep')">keep</button>
-      <h2>L</h2><hr>
+      <h2>L</h2>
+      <hr />
       <button onclick="playSign('language')">language</button>
       <button onclick="playSign('laugh')">laugh</button>
       <button onclick="playSign('learn')">learn</button>
-      <h2>M</h2><hr>
+      <h2>M</h2>
+      <hr />
       <button onclick="playSign('me')">me</button>
       <button onclick="playSign('more')">more</button>
       <button onclick="playSign('my')">my</button>
-      <h2>N</h2><hr>
+      <h2>N</h2>
+      <hr />
       <button onclick="playSign('name')">name</button>
       <button onclick="playSign('next')">next</button>
       <button onclick="playSign('not')">not</button>
       <button onclick="playSign('now')">now</button>
-      <h2>O</h2><hr>
+      <h2>O</h2>
+      <hr />
       <button onclick="playSign('of')">of</button>
       <button onclick="playSign('on')">on</button>
       <button onclick="playSign('our')">our</button>
       <button onclick="playSign('out')">out</button>
-      <h2>P</h2><hr>
+      <h2>P</h2>
+      <hr />
       <button onclick="playSign('pretty')">pretty</button>
-      <h2>R</h2><hr>
+      <h2>R</h2>
+      <hr />
       <button onclick="playSign('right')">right</button>
-      <h2>S</h2><hr>
+      <h2>S</h2>
+      <hr />
       <button onclick="playSign('sad')">sad</button>
       <button onclick="playSign('safe')">safe</button>
       <button onclick="playSign('see')">see</button>
@@ -110,7 +157,8 @@
       <button onclick="playSign('sound')">sound</button>
       <button onclick="playSign('stay')">stay</button>
       <button onclick="playSign('study')">study</button>
-      <h2>T</h2><hr>
+      <h2>T</h2>
+      <hr />
       <button onclick="playSign('talk')">talk</button>
       <button onclick="playSign('television')">television</button>
       <button onclick="playSign('thankyou')">thank you</button>
@@ -122,9 +170,11 @@
       <button onclick="playSign('time')">time</button>
       <button onclick="playSign('to')">to</button>
       <button onclick="playSign('type')">type</button>
-      <h2>U</h2><hr>
+      <h2>U</h2>
+      <hr />
       <button onclick="playSign('us')">us</button>
-      <h2>W</h2><hr>
+      <h2>W</h2>
+      <hr />
       <button onclick="playSign('walk')">walk</button>
       <button onclick="playSign('wash')">wash</button>
       <button onclick="playSign('way')">way</button>
@@ -145,16 +195,19 @@
       <button onclick="playSign('work')">work</button>
       <button onclick="playSign('world')">world</button>
       <button onclick="playSign('wrong')">wrong</button>
-      <h2>Y</h2><hr>
+      <h2>Y</h2>
+      <hr />
       <button onclick="playSign('you')">you</button>
       <button onclick="playSign('your')">your</button>
       <button onclick="playSign('yourself')">yourself</button>
     </div>
     <div id="videoWindow"></div>
+    <button onclick="closeVideo()" id="closeButton"><i class="fa-solid fa-x"></i></button>
     <script>
       let videoSrc;
       let word;
       let videoWindow = document.getElementById("videoWindow");
+      let closeButton = document.getElementById("closeButton");
       function playSign(word) {
         if (word === "after") {
           videoSrc = "./assets/after.mp4";
@@ -389,11 +442,18 @@
         } else if (word === "yourself") {
           videoSrc = "./assets/yourself.mp4";
         }
+        videoWindow.style.display = "block";
+        closeButton.style.display = "block";
         videoWindow.innerHTML = `
               <video id="videoPlayer" width="640" height="480" controls autoplay>
                 <source src="${videoSrc}" type="video/mp4">
                 Your browser does not support the video tag.
               </video>`;
+      }
+
+      function closeVideo() {
+        videoWindow.innerHTML = "";
+        closeButton.style.display = "none";
       }
     </script>
   </body>
