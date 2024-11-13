@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio To Sign Language</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <ul>
+        <li><a href="allWords.html">All Words</a></li>
+        <li><a href="recorder.html">Speech to Sign</a></li>
+      </ul>
+    </div>
+    <div class="all_words">
+      <button onclick="playSign('after')">after</button>
+      <button onclick="playSign('again')">again</button>
+      <button onclick="playSign('against')">against</button>
+      <button onclick="playSign('age')">age</button>
+      <button onclick="playSign('all')">all</button>
+      <button onclick="playSign('alone')">alone</button>
+      <button onclick="playSign('also')">also</button>
+      <button onclick="playSign('and')">and</button>
+      <button onclick="playSign('ask')">ask</button>
+      <button onclick="playSign('at')">at</button>
+      <button onclick="playSign('be')">be</button>
+      <button onclick="playSign('beautiful')">beautiful</button>
+      <button onclick="playSign('before')">before</button>
+      <button onclick="playSign('best')">best</button>
+      <button onclick="playSign('better')">better</button>
+      <button onclick="playSign('busy')">busy</button>
+      <button onclick="playSign('but')">but</button>
+      <button onclick="playSign('bye')">bye</button>
+      <button onclick="playSign('can')">can</button>
+      <button onclick="playSign('cannot')">cannot</button>
+      <button onclick="playSign('change')">change</button>
+      <button onclick="playSign('college')">college</button>
+      <button onclick="playSign('come')">come</button>
+      <button onclick="playSign('computer')">computer</button>
+      <button onclick="playSign('day')">day</button>
+      <button onclick="playSign('distance')">distance</button>
+      <button onclick="playSign('donot')">do not</button>
+      <button onclick="playSign('do')">do</button>
+      <button onclick="playSign('doesnot')">does not</button>
+      <button onclick="playSign('eat')">eat</button>
+      <button onclick="playSign('engineer')">engineer</button>
+      <button onclick="playSign('fight')">fight</button>
+      <button onclick="playSign('finish')">finish</button>
+      <button onclick="playSign('from')">from</button>
+      <button onclick="playSign('glitter')">glitter</button>
+      <button onclick="playSign('go')">go</button>
+      <button onclick="playSign('god')">god</button>
+      <button onclick="playSign('gold')">gold</button>
+      <button onclick="playSign('good')">good</button>
+      <button onclick="playSign('great')">great</button>
+      <button onclick="playSign('hand')">hand</button>
+      <button onclick="playSign('hands')">hands</button>
+      <button onclick="playSign('happy')">happy</button>
+      <button onclick="playSign('hello')">hello</button>
+      <button onclick="playSign('help')">help</button>
+      <button onclick="playSign('her')">her</button>
+      <button onclick="playSign('here')">here</button>
+      <button onclick="playSign('his')">his</button>
+      <button onclick="playSign('home')">home</button>
+      <button onclick="playSign('homepage')">homepage</button>
+      <button onclick="playSign('how')">how</button>
+      <button onclick="playSign('invent')">invent</button>
+      <button onclick="playSign('it')">it</button>
+      <button onclick="playSign('keep')">keep</button>
+      <button onclick="playSign('language')">language</button>
+      <button onclick="playSign('laugh')">laugh</button>
+      <button onclick="playSign('learn')">learn</button>
+      <button onclick="playSign('me')">me</button>
+      <button onclick="playSign('more')">more</button>
+      <button onclick="playSign('my')">my</button>
+      <button onclick="playSign('name')">name</button>
+      <button onclick="playSign('next')">next</button>
+      <button onclick="playSign('not')">not</button>
+      <button onclick="playSign('now')">now</button>
+      <button onclick="playSign('of')">of</button>
+      <button onclick="playSign('on')">on</button>
+      <button onclick="playSign('our')">our</button>
+      <button onclick="playSign('out')">out</button>
+      <button onclick="playSign('pretty')">pretty</button>
+      <button onclick="playSign('right')">right</button>
+      <button onclick="playSign('sad')">sad</button>
+      <button onclick="playSign('safe')">safe</button>
+      <button onclick="playSign('see')">see</button>
+      <button onclick="playSign('self')">self</button>
+      <button onclick="playSign('sign')">sign</button>
+      <button onclick="playSign('sing')">sing</button>
+      <button onclick="playSign('so')">so</button>
+      <button onclick="playSign('sound')">sound</button>
+      <button onclick="playSign('stay')">stay</button>
+      <button onclick="playSign('study')">study</button>
+      <button onclick="playSign('talk')">talk</button>
+      <button onclick="playSign('television')">television</button>
+      <button onclick="playSign('thankyou')">thank you</button>
+      <button onclick="playSign('thank')">thank</button>
+      <button onclick="playSign('that')">that</button>
+      <button onclick="playSign('they')">they</button>
+      <button onclick="playSign('this')">this</button>
+      <button onclick="playSign('those')">those</button>
+      <button onclick="playSign('time')">time</button>
+      <button onclick="playSign('to')">to</button>
+      <button onclick="playSign('type')">type</button>
+      <button onclick="playSign('us')">us</button>
+      <button onclick="playSign('walk')">walk</button>
+      <button onclick="playSign('wash')">wash</button>
+      <button onclick="playSign('way')">way</button>
+      <button onclick="playSign('we')">we</button>
+      <button onclick="playSign('welcome')">welcome</button>
+      <button onclick="playSign('what')">what</button>
+      <button onclick="playSign('when')">when</button>
+      <button onclick="playSign('where')">where</button>
+      <button onclick="playSign('which')">which</button>
+      <button onclick="playSign('who')">who</button>
+      <button onclick="playSign('whole')">whole</button>
+      <button onclick="playSign('whose')">whose</button>
+      <button onclick="playSign('why')">why</button>
+      <button onclick="playSign('will')">will</button>
+      <button onclick="playSign('with')">with</button>
+      <button onclick="playSign('without')">without</button>
+      <button onclick="playSign('words')">words</button>
+      <button onclick="playSign('work')">work</button>
+      <button onclick="playSign('world')">world</button>
+      <button onclick="playSign('wrong')">wrong</button>
+      <button onclick="playSign('you')">you</button>
+      <button onclick="playSign('your')">your</button>
+      <button onclick="playSign('yourself')">yourself</button>
+    </div>
+    <div id="videoWindow"></div>
+    <script>
+      let videoSrc;
+      let word;
+      let videoWindow = document.getElementById("videoWindow");
+      function playSign(word) {
+        if (word === "after") {
+          videoSrc = "./assets/after.mp4";
+        } else if (word === "again") {
+          videoSrc = "./assets/again.mp4";
+        } else if (word === "against") {
+          videoSrc = "./assets/against.mp4";
+        } else if (word === "age") {
+          videoSrc = "./assets/age.mp4";
+        } else if (word === "all") {
+          videoSrc = "./assets/all.mp4";
+        } else if (word === "alone") {
+          videoSrc = "./assets/alone.mp4";
+        } else if (word === "also") {
+          videoSrc = "./assets/also.mp4";
+        } else if (word === "and") {
+          videoSrc = "./assets/and.mp4";
+        } else if (word === "ask") {
+          videoSrc = "./assets/ask.mp4";
+        } else if (word === "at") {
+          videoSrc = "./assets/at.mp4";
+        } else if (word === "be") {
+          videoSrc = "./assets/be.mp4";
+        } else if (word === "beautiful") {
+          videoSrc = "./assets/beautiful.mp4";
+        } else if (word === "before") {
+          videoSrc = "./assets/before.mp4";
+        } else if (word === "best") {
+          videoSrc = "./assets/best.mp4";
+        } else if (word === "better") {
+          videoSrc = "./assets/better.mp4";
+        } else if (word === "busy") {
+          videoSrc = "./assets/busy.mp4";
+        } else if (word === "but") {
+          videoSrc = "./assets/but.mp4";
+        } else if (word === "bye") {
+          videoSrc = "./assets/bye.mp4";
+        } else if (word === "can") {
+          videoSrc = "./assets/can.mp4";
+        } else if (word === "cannot") {
+          videoSrc = "./assets/cannot.mp4";
+        } else if (word === "change") {
+          videoSrc = "./assets/change.mp4";
+        } else if (word === "college") {
+          videoSrc = "./assets/college.mp4";
+        } else if (word === "come") {
+          videoSrc = "./assets/come.mp4";
+        } else if (word === "computer") {
+          videoSrc = "./assets/computer.mp4";
+        } else if (word === "day") {
+          videoSrc = "./assets/day.mp4";
+        } else if (word === "distance") {
+          videoSrc = "./assets/distance.mp4";
+        } else if (word === "do not") {
+          videoSrc = "./assets/donot.mp4";
+        } else if (word === "do") {
+          videoSrc = "./assets/do.mp4";
+        } else if (word === "does not") {
+          videoSrc = "./assets/doesnot.mp4";
+        } else if (word === "eat") {
+          videoSrc = "./assets/eat.mp4";
+        } else if (word === "engineer") {
+          videoSrc = "./assets/engineer.mp4";
+        } else if (word === "fight") {
+          videoSrc = "./assets/fight.mp4";
+        } else if (word === "finish") {
+          videoSrc = "./assets/finish.mp4";
+        } else if (word === "from") {
+          videoSrc = "./assets/from.mp4";
+        } else if (word === "glitter") {
+          videoSrc = "./assets/glitter.mp4";
+        } else if (word === "go") {
+          videoSrc = "./assets/go.mp4";
+        } else if (word === "god") {
+          videoSrc = "./assets/god.mp4";
+        } else if (word === "gold") {
+          videoSrc = "./assets/gold.mp4";
+        } else if (word === "good") {
+          videoSrc = "./assets/good.mp4";
+        } else if (word === "great") {
+          videoSrc = "./assets/great.mp4";
+        } else if (word === "hand") {
+          videoSrc = "./assets/hand.mp4";
+        } else if (word === "hands") {
+          videoSrc = "./assets/hands.mp4";
+        } else if (word === "happy") {
+          videoSrc = "./assets/happy.mp4";
+        } else if (word === "hello") {
+          videoSrc = "./assets/hello.mp4";
+        } else if (word === "help") {
+          videoSrc = "./assets/help.mp4";
+        } else if (word === "her") {
+          videoSrc = "./assets/her.mp4";
+        } else if (word === "here") {
+          videoSrc = "./assets/here.mp4";
+        } else if (word === "his") {
+          videoSrc = "./assets/his.mp4";
+        } else if (word === "home") {
+          videoSrc = "./assets/home.mp4";
+        } else if (word === "homepage") {
+          videoSrc = "./assets/homepage.mp4";
+        } else if (word === "how") {
+          videoSrc = "./assets/how.mp4";
+        } else if (word === "i") {
+          videoSrc = "./assets/i.mp4";
+        } else if (word === "invent") {
+          videoSrc = "./assets/invent.mp4";
+        } else if (word === "it") {
+          videoSrc = "./assets/it.mp4";
+        } else if (word === "keep") {
+          videoSrc = "./assets/keep.mp4";
+        } else if (word === "language") {
+          videoSrc = "./assets/language.mp4";
+        } else if (word === "laugh") {
+          videoSrc = "./assets/laugh.mp4";
+        } else if (word === "learn") {
+          videoSrc = "./assets/learn.mp4";
+        } else if (word === "me") {
+          videoSrc = "./assets/me.mp4";
+        } else if (word === "more") {
+          videoSrc = "./assets/more.mp4";
+        } else if (word === "my") {
+          videoSrc = "./assets/my.mp4";
+        } else if (word === "name") {
+          videoSrc = "./assets/name.mp4";
+        } else if (word === "next") {
+          videoSrc = "./assets/next.mp4";
+        } else if (word === "not") {
+          videoSrc = "./assets/not.mp4";
+        } else if (word === "now") {
+          videoSrc = "./assets/now.mp4";
+        } else if (word === "of") {
+          videoSrc = "./assets/of.mp4";
+        } else if (word === "on") {
+          videoSrc = "./assets/on.mp4";
+        } else if (word === "our") {
+          videoSrc = "./assets/our.mp4";
+        } else if (word === "out") {
+          videoSrc = "./assets/out.mp4";
+        } else if (word === "pretty") {
+          videoSrc = "./assets/pretty.mp4";
+        } else if (word === "right") {
+          videoSrc = "./assets/right.mp4";
+        } else if (word === "sad") {
+          videoSrc = "./assets/sad.mp4";
+        } else if (word === "safe") {
+          videoSrc = "./assets/safe.mp4";
+        } else if (word === "see") {
+          videoSrc = "./assets/see.mp4";
+        } else if (word === "self") {
+          videoSrc = "./assets/self.mp4";
+        } else if (word === "sign") {
+          videoSrc = "./assets/sign.mp4";
+        } else if (word === "sing") {
+          videoSrc = "./assets/sing.mp4";
+        } else if (word === "so") {
+          videoSrc = "./assets/so.mp4";
+        } else if (word === "sound") {
+          videoSrc = "./assets/sound.mp4";
+        } else if (word === "stay") {
+          videoSrc = "./assets/stay.mp4";
+        } else if (word === "study") {
+          videoSrc = "./assets/study.mp4";
+        } else if (word === "talk") {
+          videoSrc = "./assets/talk.mp4";
+        } else if (word === "television") {
+          videoSrc = "./assets/television.mp4";
+        } else if (word === "thank you") {
+          videoSrc = "./assets/thankyou.mp4";
+        } else if (word === "thank") {
+          videoSrc = "./assets/thank.mp4";
+        } else if (word === "that") {
+          videoSrc = "./assets/that.mp4";
+        } else if (word === "they") {
+          videoSrc = "./assets/they.mp4";
+        } else if (word === "this") {
+          videoSrc = "./assets/this.mp4";
+        } else if (word === "those") {
+          videoSrc = "./assets/those.mp4";
+        } else if (word === "time") {
+          videoSrc = "./assets/time.mp4";
+        } else if (word === "to") {
+          videoSrc = "./assets/to.mp4";
+        } else if (word === "type") {
+          videoSrc = "./assets/type.mp4";
+        } else if (word === "us") {
+          videoSrc = "./assets/us.mp4";
+        } else if (word === "walk") {
+          videoSrc = "./assets/walk.mp4";
+        } else if (word === "wash") {
+          videoSrc = "./assets/wash.mp4";
+        } else if (word === "way") {
+          videoSrc = "./assets/way.mp4";
+        } else if (word === "we") {
+          videoSrc = "./assets/we.mp4";
+        } else if (word === "welcome") {
+          videoSrc = "./assets/welcome.mp4";
+        } else if (word === "what") {
+          videoSrc = "./assets/what.mp4";
+        } else if (word === "when") {
+          videoSrc = "./assets/when.mp4";
+        } else if (word === "where") {
+          videoSrc = "./assets/where.mp4";
+        } else if (word === "which") {
+          videoSrc = "./assets/which.mp4";
+        } else if (word === "who") {
+          videoSrc = "./assets/who.mp4";
+        } else if (word === "whole") {
+          videoSrc = "./assets/whole.mp4";
+        } else if (word === "whose") {
+          videoSrc = "./assets/whose.mp4";
+        } else if (word === "why") {
+          videoSrc = "./assets/why.mp4";
+        } else if (word === "will") {
+          videoSrc = "./assets/will.mp4";
+        } else if (word === "with") {
+          videoSrc = "./assets/with.mp4";
+        } else if (word === "without") {
+          videoSrc = "./assets/without.mp4";
+        } else if (word === "words") {
+          videoSrc = "./assets/words.mp4";
+        } else if (word === "work") {
+          videoSrc = "./assets/work.mp4";
+        } else if (word === "world") {
+          videoSrc = "./assets/world.mp4";
+        } else if (word === "wrong") {
+          videoSrc = "./assets/wrong.mp4";
+        } else if (word === "you") {
+          videoSrc = "./assets/you.mp4";
+        } else if (word === "your") {
+          videoSrc = "./assets/your.mp4";
+        } else if (word === "yourself") {
+          videoSrc = "./assets/yourself.mp4";
+        }
+        videoWindow.innerHTML = `
+              <video id="videoPlayer" width="640" height="480" controls autoplay>
+                <source src="${videoSrc}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>`;
+      }
+    </script>
+  </body>
+</html>
